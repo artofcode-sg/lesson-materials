@@ -13,11 +13,11 @@ def is_english_word(word):
     f.close()
     return word.lower() in englishDictionary
 
-def game_start():
+def start_timer():
     global start_time
     start_time = time.time()
 
-def game_end():
+def get_elapsed_time():
     end_time = time.time()
     return end_time - start_time
 
@@ -36,8 +36,8 @@ def hint(prev_answers, answer):
 
 
 if __name__ == '__main__':
-    game_start()
+    start_timer()
     print(is_english_word("testing"))
     print(generate_word())
     print(hint(["haaaa", "aaala", "aaaaa", "aaaao"], "hello"))
-    print(f"code took {game_end()}s")
+    print(f"code took {get_elapsed_time()}s")
